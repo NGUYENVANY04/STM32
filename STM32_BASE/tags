@@ -1,0 +1,146 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ADDRESS_BASE	lib/isr.h	3;"	d
+ADRESS_BASE_RCC	lib/rcc.h	4;"	d
+BRR	lib/gpio.h	/^    volatile uint32_t BRR;$/;"	m	struct:__anon6
+CBSRR	lib/gpio.h	/^    volatile uint32_t CBSRR;$/;"	m	struct:__anon6
+CC	Makefile	/^CC=arm-none-eabi-gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS= -Ilib -mcpu=$(MACH) -mthumb -mfloat-abi=soft -Wall -O0$/;"	m
+CLEAR_BIT	lib/gpio.h	11;"	d
+CLEAR_BIT	src/test/main.c	5;"	d	file:
+CLEAR_REG	lib/gpio.h	13;"	d
+CLEAR_REG	src/test/main.c	7;"	d	file:
+CRH	lib/gpio.h	/^   uint32_t CRH;$/;"	m	struct:__anon6
+CRL	lib/gpio.h	/^   uint32_t CRL;$/;"	m	struct:__anon6
+Default_Handle	Startup/startup.c	/^void Default_Handle(void)$/;"	f
+EXTI	lib/isr.h	8;"	d
+EXTI_EMR	lib/isr.h	/^    volatile uint32_t EXTI_IMR, EXTI_EMR, EXTI_RTSR, EXTI_FTSR, EXTI_SWIER, EXTI_PR;$/;"	m	struct:__anon5
+EXTI_FTSR	lib/isr.h	/^    volatile uint32_t EXTI_IMR, EXTI_EMR, EXTI_RTSR, EXTI_FTSR, EXTI_SWIER, EXTI_PR;$/;"	m	struct:__anon5
+EXTI_IMR	lib/isr.h	/^    volatile uint32_t EXTI_IMR, EXTI_EMR, EXTI_RTSR, EXTI_FTSR, EXTI_SWIER, EXTI_PR;$/;"	m	struct:__anon5
+EXTI_PR	lib/isr.h	/^    volatile uint32_t EXTI_IMR, EXTI_EMR, EXTI_RTSR, EXTI_FTSR, EXTI_SWIER, EXTI_PR;$/;"	m	struct:__anon5
+EXTI_RTSR	lib/isr.h	/^    volatile uint32_t EXTI_IMR, EXTI_EMR, EXTI_RTSR, EXTI_FTSR, EXTI_SWIER, EXTI_PR;$/;"	m	struct:__anon5
+EXTI_SWIER	lib/isr.h	/^    volatile uint32_t EXTI_IMR, EXTI_EMR, EXTI_RTSR, EXTI_FTSR, EXTI_SWIER, EXTI_PR;$/;"	m	struct:__anon5
+EXTI_t	lib/isr.h	/^} EXTI_t;$/;"	t	typeref:struct:__anon5
+F	src/test/main.c	/^int F(int n)$/;"	f
+GPIOA	lib/gpio.h	36;"	d
+GPIOA_BASE_ADDRESSS	lib/gpio.h	19;"	d
+GPIOB	lib/gpio.h	37;"	d
+GPIOB_BASE_ADDRESSS	lib/gpio.h	20;"	d
+GPIOC	lib/gpio.h	38;"	d
+GPIOC_BASE_ADDRESSS	lib/gpio.h	21;"	d
+GPIOD	lib/gpio.h	39;"	d
+GPIOD_BASE_ADDRESSS	lib/gpio.h	22;"	d
+GPIOE	lib/gpio.h	40;"	d
+GPIOE_BASE_ADDRESSS	lib/gpio.h	23;"	d
+GPIOF	lib/gpio.h	41;"	d
+GPIOF_BASE_ADDRESSS	lib/gpio.h	24;"	d
+GPIOG	lib/gpio.h	42;"	d
+GPIOG_BASE_ADDRESSS	lib/gpio.h	25;"	d
+GPIO_Config	lib/gpio.c	/^void GPIO_Config(GPIO_Config_t *config)$/;"	f
+GPIO_Config_t	lib/gpio.h	/^} GPIO_Config_t;$/;"	t	typeref:struct:__anon11
+GPIO_INPUT_ANALOG	lib/gpio.h	/^    GPIO_INPUT_ANALOG = 0,$/;"	e	enum:__anon9
+GPIO_INPUT_FLOATING	lib/gpio.h	/^    GPIO_INPUT_FLOATING,$/;"	e	enum:__anon9
+GPIO_INPUT_PULL_UP_DOWN	lib/gpio.h	/^    GPIO_INPUT_PULL_UP_DOWN,$/;"	e	enum:__anon9
+GPIO_InputType_t	lib/gpio.h	/^} GPIO_InputType_t;$/;"	t	typeref:enum:__anon9
+GPIO_MODE_INPUT	lib/gpio.h	/^    GPIO_MODE_INPUT,$/;"	e	enum:__anon7
+GPIO_MODE_OUTPUT	lib/gpio.h	/^    GPIO_MODE_OUTPUT,$/;"	e	enum:__anon7
+GPIO_MODE_OUTPUT_10MHz	lib/gpio.h	/^    GPIO_MODE_OUTPUT_10MHz = 1,$/;"	e	enum:__anon8
+GPIO_MODE_OUTPUT_2MHz	lib/gpio.h	/^    GPIO_MODE_OUTPUT_2MHz,$/;"	e	enum:__anon8
+GPIO_MODE_OUTPUT_50MHz	lib/gpio.h	/^    GPIO_MODE_OUTPUT_50MHz,$/;"	e	enum:__anon8
+GPIO_MODE_t	lib/gpio.h	/^} GPIO_MODE_t;$/;"	t	typeref:enum:__anon7
+GPIO_OUTPUT_AF_OPEN_DRAIN	lib/gpio.h	/^    GPIO_OUTPUT_AF_OPEN_DRAIN,$/;"	e	enum:__anon10
+GPIO_OUTPUT_AF_PUSH_PULL	lib/gpio.h	/^    GPIO_OUTPUT_AF_PUSH_PULL,$/;"	e	enum:__anon10
+GPIO_OUTPUT_OPEN_DRAIN	lib/gpio.h	/^    GPIO_OUTPUT_OPEN_DRAIN,$/;"	e	enum:__anon10
+GPIO_OUTPUT_PUSH_PULL	lib/gpio.h	/^    GPIO_OUTPUT_PUSH_PULL = 0,$/;"	e	enum:__anon10
+GPIO_OutputType_t	lib/gpio.h	/^} GPIO_OutputType_t;$/;"	t	typeref:enum:__anon10
+GPIO_REGISTER_t	lib/gpio.h	/^} GPIO_REGISTER_t;$/;"	t	typeref:struct:__anon6
+GPIO_SPEED_t	lib/gpio.h	/^} GPIO_SPEED_t;$/;"	t	typeref:enum:__anon8
+IDR	lib/gpio.h	/^    volatile uint32_t IDR;$/;"	m	struct:__anon6
+LCKR	lib/gpio.h	/^    volatile uint32_t LCKR;$/;"	m	struct:__anon6
+LDFLAGS	Makefile	/^LDFLAGS= -mcpu=$(MACH) -mthumb -mfloat-abi=soft --specs=nano.specs -T linker.ld -Wl,-Map=final.map$/;"	m
+LDFLAGS_SH	Makefile	/^LDFLAGS_SH= -mcpu=$(MACH) -mthumb -mfloat-abi=soft --specs=rdimon.specs -T linker.ld -Wl,-Map=final.map$/;"	m
+MACH	Makefile	/^MACH=cortex-m3$/;"	m
+MODIFY_REG	lib/gpio.h	16;"	d
+MODIFY_REG	src/test/main.c	10;"	d	file:
+ODR	lib/gpio.h	/^    volatile uint32_t ODR;$/;"	m	struct:__anon6
+OUTPUT_PATH	Makefile	/^OUTPUT_PATH := $(PRO_DIR)$/;"	m
+PROJ_NAME	Makefile	/^PROJ_NAME := TEST $/;"	m
+PRO_LIB	Makefile	/^PRO_LIB := lib $/;"	m
+PRO_SRC	Makefile	/^PRO_SRC := src$/;"	m
+RCC	lib/rcc.h	18;"	d
+RCC_AHBENR	lib/rcc.h	/^    volatile uint32_t RCC_AHBENR;$/;"	m	struct:__anon4
+RCC_APB1ENR	lib/rcc.h	/^    volatile uint32_t RCC_APB1ENR;$/;"	m	struct:__anon4
+RCC_APB1RSTR	lib/rcc.h	/^    volatile uint32_t RCC_APB1RSTR;$/;"	m	struct:__anon4
+RCC_APB2ENR	lib/rcc.h	/^    volatile uint32_t RCC_APB2ENR;$/;"	m	struct:__anon4
+RCC_APB2RSTR	lib/rcc.h	/^    volatile uint32_t RCC_APB2RSTR;$/;"	m	struct:__anon4
+RCC_BDCR	lib/rcc.h	/^    volatile uint32_t RCC_BDCR;$/;"	m	struct:__anon4
+RCC_CFGR	lib/rcc.h	/^    volatile uint32_t RCC_CFGR;$/;"	m	struct:__anon4
+RCC_CIR	lib/rcc.h	/^    volatile uint32_t RCC_CIR;$/;"	m	struct:__anon4
+RCC_CR	lib/rcc.h	/^    volatile uint32_t RCC_CR;$/;"	m	struct:__anon4
+RCC_CSR	lib/rcc.h	/^    volatile uint32_t RCC_CSR;$/;"	m	struct:__anon4
+RCC_REGISTER_t	lib/rcc.h	/^} RCC_REGISTER_t;$/;"	t	typeref:struct:__anon4
+READ_BIT	lib/gpio.h	12;"	d
+READ_BIT	src/test/main.c	6;"	d	file:
+READ_REG	lib/gpio.h	15;"	d
+READ_REG	src/test/main.c	9;"	d	file:
+Reset_Handler	Startup/startup.c	/^void Reset_Handler(void)$/;"	f
+SET_BIT	lib/gpio.h	10;"	d
+SET_BIT	src/test/main.c	4;"	d	file:
+SRAM_END	Startup/startup.c	5;"	d	file:
+SRAM_SIZE	Startup/startup.c	4;"	d	file:
+SRAM_START	Startup/startup.c	3;"	d	file:
+STACK_START	Startup/startup.c	6;"	d	file:
+TEST_C	src/test/test.c	2;"	d	file:
+WRITE_REG	lib/gpio.h	14;"	d
+WRITE_REG	src/test/main.c	8;"	d	file:
+_GPIO_H_	lib/gpio.h	6;"	d
+_ISR_H_	lib/isr.h	2;"	d
+_RCC_H_	lib/rcc.h	2;"	d
+__env	lib/syscall.c	/^char *__env[1] = { 0 };$/;"	v
+_close	lib/syscall.c	/^int _close(int file)$/;"	f
+_execve	lib/syscall.c	/^int _execve(char *name, char **argv, char **env)$/;"	f
+_exit	lib/syscall.c	/^void _exit (int status)$/;"	f
+_fork	lib/syscall.c	/^int _fork(void)$/;"	f
+_fstat	lib/syscall.c	/^int _fstat(int file, struct stat *st)$/;"	f
+_getpid	lib/syscall.c	/^int _getpid(void)$/;"	f
+_isatty	lib/syscall.c	/^int _isatty(int file)$/;"	f
+_kill	lib/syscall.c	/^int _kill(int pid, int sig)$/;"	f
+_link	lib/syscall.c	/^int _link(char *old, char *new)$/;"	f
+_lseek	lib/syscall.c	/^int _lseek(int file, int ptr, int dir)$/;"	f
+_open	lib/syscall.c	/^int _open(char *path, int flags, ...)$/;"	f
+_read	lib/syscall.c	/^__attribute__((weak)) int _read(int file, char *ptr, int len)$/;"	f
+_sbrk	lib/syscall.c	/^caddr_t _sbrk(int incr)$/;"	f
+_stat	lib/syscall.c	/^int _stat(char *file, struct stat *st)$/;"	f
+_times	lib/syscall.c	/^int _times(struct tms *buf)$/;"	f
+_unlink	lib/syscall.c	/^int _unlink(char *name)$/;"	f
+_wait	lib/syscall.c	/^int _wait(int *status)$/;"	f
+_write	lib/syscall.c	/^__attribute__((weak)) int _write(int file, char *ptr, int len)$/;"	f
+a	src/test/main.c	/^    a,$/;"	e	enum:__anon3	file:
+a	src/test/main.c	/^    int a;$/;"	m	struct:__anon1	file:
+b	src/test/main.c	/^        int b;$/;"	m	union:__anon1::__anon2	file:
+b	src/test/main.c	/^    b,$/;"	e	enum:__anon3	file:
+c	src/test/main.c	/^        int c;$/;"	m	union:__anon1::__anon2	file:
+c	src/test/main.c	/^    c,$/;"	e	enum:__anon3	file:
+enable_clock	lib/rcc.c	/^void enable_clock() { RCC->RCC_APB2ENR |= (1 << 4); }$/;"	f
+environ	lib/syscall.c	/^char **environ = __env;$/;"	v
+gpio_get_lever	lib/gpio.c	/^bool gpio_get_lever(GPIO_Config_t *config)$/;"	f
+gpio_set_lever	lib/gpio.c	/^void gpio_set_lever(GPIO_Config_t *config, bool level)$/;"	f
+gpio_toggle_lever	lib/gpio.c	/^void gpio_toggle_lever(GPIO_Config_t *config) { config->port->ODR ^= (1 << config->pin); }$/;"	f
+he	src/test/main.c	/^} he;$/;"	t	typeref:enum:__anon3	file:
+initialise_monitor_handles	lib/syscall.c	/^void initialise_monitor_handles()$/;"	f
+inputType	lib/gpio.h	/^        GPIO_InputType_t inputType;$/;"	m	union:__anon11::__anon12
+main	src/main.c	/^int main()$/;"	f
+main	src/test/main.c	/^int main()$/;"	f
+mode	lib/gpio.h	/^    GPIO_MODE_t mode;$/;"	m	struct:__anon11
+outputType	lib/gpio.h	/^        GPIO_OutputType_t outputType;$/;"	m	union:__anon11::__anon12
+pin	lib/gpio.h	/^    uint16_t pin;$/;"	m	struct:__anon11
+port	lib/gpio.h	/^    GPIO_REGISTER_t *port;$/;"	m	struct:__anon11
+speed	lib/gpio.h	/^    GPIO_SPEED_t speed;$/;"	m	struct:__anon11
+test_config	lib/gpio.c	/^GPIO_Config_t test_config = {$/;"	v
+test_t	src/test/main.c	/^} test_t;$/;"	t	typeref:struct:__anon1	file:
+tet	src/test/test.c	/^void tet() { printf("Hello"); }$/;"	f
+vectors	Startup/startup.c	/^uint32_t vectors[] __attribute__((section(".isr_vector"))) = {$/;"	v

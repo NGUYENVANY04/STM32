@@ -1,0 +1,23 @@
+https://www.reddit.com/r/embedded/comments/wjifhp/how_to_learn_mcu_programming_with_makefiles_and/
+-----------------------------------------------------------------------------------------------------
+https://jacobmossberg.se/posts/2018/08/11/run-c-program-bare-metal-on-arm-cortex-m3.html
+
+https://karooza.net/going-bare-metal-on-stm32
+
+https://www.pomad.fr/PoMAD/stm32
+
+https://github.com/bbrown1867/stm32-makefile
+
+https://youtube.com/playlist?list=PLERTijJOmYrDiiWd10iRHY0VRHdJwUH4g trực quan các bước 
+
+https://github.com/niekiran/baremetalembedded
+
+https://github.com/wovo/bmptk/blob/master/Makefile.inc
+
+https://github.com/dwelch67
+
+https://obitvn.wordpress.com/about/
+
+https://thongrobot.wordpress.com/2018/01/13/linker-script-va-startup-code-trong-arm-voi-stm32/
+
+https://kleinembedded.com/stm32-without-cubeide-part-1-the-bare-necessities/ có các bước để build 

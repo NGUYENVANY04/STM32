@@ -1,0 +1,306 @@
+Archive member included to satisfy reference by file (symbol)
+
+/home/ynghia/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/libc.a(lib_a-errno.o)
+                              lib/syscall.o (__errno)
+/home/ynghia/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/libc.a(lib_a-impure.o)
+                              /home/ynghia/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/libc.a(lib_a-errno.o) (_impure_ptr)
+
+Discarded input sections
+
+ .debug_frame   0x0000000000000000       0x20 /home/ynghia/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/libc.a(lib_a-errno.o)
+ .ARM.attributes
+                0x0000000000000000       0x2a /home/ynghia/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/libc.a(lib_a-errno.o)
+ .ARM.attributes
+                0x0000000000000000       0x2a /home/ynghia/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/libc.a(lib_a-impure.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+RAM              0x0000000020000000 0x0000000000005000 xrw
+FLASH            0x0000000008000000 0x0000000000010000 xr
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD lib/rcc.o
+LOAD lib/gpio.o
+LOAD src/main.o
+LOAD Startup/startup.o
+LOAD lib/syscall.o
+                0x0000000020005000                _estack = (ORIGIN (RAM) + LENGTH (RAM))
+                0x0000000000000200                _Min_Heap_Size = 0x200
+                0x0000000000000400                _Min_Stack_Size = 0x400
+
+.isr_vector     0x0000000008000000      0x130
+                0x0000000008000000                . = ALIGN (0x4)
+ *(.isr_vector)
+ .isr_vector    0x0000000008000000      0x130 Startup/startup.o
+                0x0000000008000000                vectors
+                0x0000000008000130                . = ALIGN (0x4)
+
+.text           0x0000000008000130      0x520
+                0x0000000008000130                . = ALIGN (0x4)
+ *(.text)
+ .text          0x0000000008000130       0x1c lib/rcc.o
+                0x0000000008000130                enable_clock
+ .text          0x000000000800014c      0x142 lib/gpio.o
+                0x000000000800014c                GPIO_Config
+                0x000000000800020e                gpio_set_level
+                0x0000000008000240                gpio_get_level
+                0x0000000008000268                gpio_toggle_level
+ *fill*         0x000000000800028e        0x2 
+ .text          0x0000000008000290       0xf0 src/main.o
+                0x0000000008000290                test_uart
+                0x00000000080002d0                main
+ .text          0x0000000008000380       0x64 Startup/startup.o
+                0x0000000008000380                Reset_Handler
+                0x00000000080003dc                DMA1_Channel1_handle
+                0x00000000080003dc                SPI2_handle
+                0x00000000080003dc                TIM1_UP_handle
+                0x00000000080003dc                EXTI3_handle
+                0x00000000080003dc                TIM7_handle
+                0x00000000080003dc                TIM1_BRK_handle
+                0x00000000080003dc                ADC3_handle
+                0x00000000080003dc                USART3_handle
+                0x00000000080003dc                CAN_RX1_handle
+                0x00000000080003dc                RTCAlarm_handle
+                0x00000000080003dc                EXTI4_handle
+                0x00000000080003dc                PVD_handle
+                0x00000000080003dc                UART4_handle
+                0x00000000080003dc                FLASH_handle
+                0x00000000080003dc                DMA2_Channel2_handle
+                0x00000000080003dc                I2C1_ER_handle
+                0x00000000080003dc                DMA1_Channel5_handle
+                0x00000000080003dc                USART2_handle
+                0x00000000080003dc                EXTI2_handle
+                0x00000000080003dc                EXTI1_handle
+                0x00000000080003dc                TIM2_handle
+                0x00000000080003dc                DMA1_Channel6_handle
+                0x00000000080003dc                HardFault_handle
+                0x00000000080003dc                SysTick_handle
+                0x00000000080003dc                TIM1_TRG_COM_handle
+                0x00000000080003dc                USB_HP_CAN_TX_handle
+                0x00000000080003dc                CAN_SCE_handle
+                0x00000000080003dc                DMA2_Channel4_5_handle
+                0x00000000080003dc                FSMC_handle
+                0x00000000080003dc                EXTI15_10_handle
+                0x00000000080003dc                EXTI0_handle
+                0x00000000080003dc                USBWakeUp_handle
+                0x00000000080003dc                TIM6_handle
+                0x00000000080003dc                TIM5_handle
+                0x00000000080003dc                RTC_handle
+                0x00000000080003dc                TIM3_handle
+                0x00000000080003dc                EXTI9_5_handle
+                0x00000000080003dc                DMA2_Channel1_handle
+                0x00000000080003dc                TIM8_CC_handle
+                0x00000000080003dc                SPI1_handle
+                0x00000000080003dc                DMA1_Channel4_handle
+                0x00000000080003dc                I2C1_EV_handle
+                0x00000000080003dc                PendSV_handle
+                0x00000000080003dc                USART1_handle
+                0x00000000080003dc                Default_Handle
+                0x00000000080003dc                SDIO_handle
+                0x00000000080003dc                NMI_handle
+                0x00000000080003dc                UART5_handle
+                0x00000000080003dc                TIM1_CC_handle
+                0x00000000080003dc                BusFault_handle
+                0x00000000080003dc                SVCall_handle
+                0x00000000080003dc                DMA1_Channel3_handle
+                0x00000000080003dc                WWDG_handle
+                0x00000000080003dc                MemManage_handle
+                0x00000000080003dc                TIM8_UP_handle
+                0x00000000080003dc                DMA1_Channel2_handle
+                0x00000000080003dc                RCC_handle
+                0x00000000080003dc                TIM8_TRG_COM_handle
+                0x00000000080003dc                Debug_Monitor_handle
+                0x00000000080003dc                UsageFault_handle
+                0x00000000080003dc                DMA1_Channel7_handle
+                0x00000000080003dc                I2C2_EV_handle
+                0x00000000080003dc                TAMPER_handle
+                0x00000000080003dc                TIM8_BRK_handle
+                0x00000000080003dc                ADC1_2_handle
+                0x00000000080003dc                DMA2_Channel3_handle
+                0x00000000080003dc                TIM4_handle
+                0x00000000080003dc                SPI3_handle
+                0x00000000080003dc                I2C2_ER_handle
+                0x00000000080003dc                USB_LP_CAN_RX0_handle
+ .text          0x00000000080003e4      0x25c lib/syscall.o
+                0x00000000080003e4                initialise_monitor_handles
+                0x00000000080003f0                _getpid
+                0x00000000080003fe                _kill
+                0x000000000800041e                _exit
+                0x0000000008000432                _read
+                0x000000000800046c                _write
+                0x00000000080004a4                _close
+                0x00000000080004ba                _fstat
+                0x00000000080004d8                _isatty
+                0x00000000080004ec                _lseek
+                0x0000000008000504                _open
+                0x000000000800051e                _wait
+                0x000000000800053c                _unlink
+                0x000000000800055a                _times
+                0x0000000008000570                _stat
+                0x000000000800058e                _link
+                0x00000000080005ae                _fork
+                0x00000000080005c4                _execve
+                0x00000000080005e6                _sbrk
+ .text          0x0000000008000640        0x0 /home/ynghia/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/libc.a(lib_a-errno.o)
+ .text          0x0000000008000640        0x0 /home/ynghia/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/libc.a(lib_a-impure.o)
+ *(.text*)
+ .text.__errno  0x0000000008000640       0x10 /home/ynghia/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/libc.a(lib_a-errno.o)
+                0x0000000008000640                __errno
+ *(.glue_7)
+ .glue_7        0x0000000008000650        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x0000000008000650        0x0 linker stubs
+ *(.eh_frame)
+ *(.init)
+ *(.fini)
+                0x0000000008000650                . = ALIGN (0x4)
+                0x0000000008000650                _etext = .
+
+.vfp11_veneer   0x0000000008000650        0x0
+ .vfp11_veneer  0x0000000008000650        0x0 linker stubs
+
+.v4_bx          0x0000000008000650        0x0
+ .v4_bx         0x0000000008000650        0x0 linker stubs
+
+.iplt           0x0000000008000650        0x0
+ .iplt          0x0000000008000650        0x0 src/main.o
+
+.rodata         0x0000000008000650       0x28
+                0x0000000008000650                . = ALIGN (0x4)
+ *(.rodata)
+ .rodata        0x0000000008000650       0x24 src/main.o
+ *(.rodata*)
+ .rodata._global_impure_ptr
+                0x0000000008000674        0x4 /home/ynghia/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/libc.a(lib_a-impure.o)
+                0x0000000008000674                _global_impure_ptr
+                0x0000000008000678                . = ALIGN (0x4)
+
+.rel.dyn        0x0000000008000678        0x0
+ .rel.iplt      0x0000000008000678        0x0 src/main.o
+
+.ARM.extab      0x0000000008000678        0x0
+                0x0000000008000678                . = ALIGN (0x4)
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+                0x0000000008000678                . = ALIGN (0x4)
+
+.ARM            0x0000000008000678        0x0
+                0x0000000008000678                . = ALIGN (0x4)
+                0x0000000008000678                __exidx_start = .
+ *(.ARM.exidx*)
+                0x0000000008000678                __exidx_end = .
+                0x0000000008000678                . = ALIGN (0x4)
+
+.preinit_array  0x0000000008000678        0x0
+                0x0000000008000678                . = ALIGN (0x4)
+                [!provide]                        PROVIDE (__preinit_array_start = .)
+ *(.preinit_array*)
+                [!provide]                        PROVIDE (__preinit_array_end = .)
+                0x0000000008000678                . = ALIGN (0x4)
+
+.init_array     0x0000000008000678        0x0
+                0x0000000008000678                . = ALIGN (0x4)
+                [!provide]                        PROVIDE (__init_array_start = .)
+ *(SORT_BY_NAME(.init_array.*))
+ *(.init_array*)
+                [!provide]                        PROVIDE (__init_array_end = .)
+                0x0000000008000678                . = ALIGN (0x4)
+
+.fini_array     0x0000000008000678        0x0
+                0x0000000008000678                . = ALIGN (0x4)
+                [!provide]                        PROVIDE (__fini_array_start = .)
+ *(SORT_BY_NAME(.fini_array.*))
+ *(.fini_array*)
+                [!provide]                        PROVIDE (__fini_array_end = .)
+                0x0000000008000678                . = ALIGN (0x4)
+                0x0000000008000678                _sidata = LOADADDR (.data)
+
+.data           0x0000000020000000      0x430 load address 0x0000000008000678
+                0x0000000020000000                . = ALIGN (0x4)
+                0x0000000020000000                _sdata = .
+ *(.data)
+ .data          0x0000000020000000        0x0 lib/rcc.o
+ .data          0x0000000020000000        0x0 lib/gpio.o
+ .data          0x0000000020000000        0x0 src/main.o
+ .data          0x0000000020000000        0x0 Startup/startup.o
+ .data          0x0000000020000000        0x4 lib/syscall.o
+                0x0000000020000000                environ
+ .data          0x0000000020000004        0x0 /home/ynghia/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/libc.a(lib_a-errno.o)
+ .data          0x0000000020000004        0x0 /home/ynghia/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/libc.a(lib_a-impure.o)
+ *(.data*)
+ .data._impure_ptr
+                0x0000000020000004        0x4 /home/ynghia/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/libc.a(lib_a-impure.o)
+                0x0000000020000004                _impure_ptr
+ .data.impure_data
+                0x0000000020000008      0x428 /home/ynghia/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/libc.a(lib_a-impure.o)
+ *(.RamFunc)
+ *(.RamFunc*)
+                0x0000000020000430                . = ALIGN (0x4)
+                0x0000000020000430                _edata = .
+
+.igot.plt       0x0000000020000430        0x0 load address 0x0000000008000aa8
+ .igot.plt      0x0000000020000430        0x0 src/main.o
+                0x0000000020000430                . = ALIGN (0x4)
+
+.bss            0x0000000020000430        0x8 load address 0x0000000008000aa8
+                0x0000000020000430                _sbss = .
+                0x0000000020000430                __bss_start__ = _sbss
+ *(.bss)
+ .bss           0x0000000020000430        0x0 lib/rcc.o
+ .bss           0x0000000020000430        0x0 lib/gpio.o
+ .bss           0x0000000020000430        0x0 src/main.o
+ .bss           0x0000000020000430        0x0 Startup/startup.o
+ .bss           0x0000000020000430        0x8 lib/syscall.o
+                0x0000000020000430                __env
+ .bss           0x0000000020000438        0x0 /home/ynghia/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/libc.a(lib_a-errno.o)
+ .bss           0x0000000020000438        0x0 /home/ynghia/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/libc.a(lib_a-impure.o)
+ *(.bss*)
+ *(COMMON)
+                0x0000000020000438                . = ALIGN (0x4)
+                0x0000000020000438                _ebss = .
+                0x0000000020000438                __bss_end__ = _ebss
+
+._user_heap_stack
+                0x0000000020000438      0x600 load address 0x0000000008000aa8
+                0x0000000020000438                . = ALIGN (0x8)
+                0x0000000020000438                PROVIDE (end = .)
+                [!provide]                        PROVIDE (_end = .)
+                0x0000000020000638                . = (. + _Min_Heap_Size)
+ *fill*         0x0000000020000438      0x200 
+                0x0000000020000a38                . = (. + _Min_Stack_Size)
+ *fill*         0x0000000020000638      0x400 
+                0x0000000020000a38                . = ALIGN (0x8)
+
+/DISCARD/
+ libc.a(*)
+ libm.a(*)
+ libgcc.a(*)
+
+.ARM.attributes
+                0x0000000000000000       0x2f
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x0000000000000000       0x2d lib/rcc.o
+ .ARM.attributes
+                0x000000000000002d       0x2d lib/gpio.o
+ .ARM.attributes
+                0x000000000000005a       0x2d src/main.o
+ .ARM.attributes
+                0x0000000000000087       0x2d Startup/startup.o
+ .ARM.attributes
+                0x00000000000000b4       0x2d lib/syscall.o
+OUTPUT(firmware.elf elf32-littlearm)
+LOAD linker stubs
+LOAD /home/ynghia/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/libc.a
+LOAD /home/ynghia/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/libm.a
+LOAD /home/ynghia/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/libgcc.a
+
+.comment        0x0000000000000000       0x49
+ .comment       0x0000000000000000       0x49 lib/rcc.o
+                                         0x4a (size before relaxing)
+ .comment       0x0000000000000049       0x4a lib/gpio.o
+ .comment       0x0000000000000049       0x4a src/main.o
+ .comment       0x0000000000000049       0x4a Startup/startup.o
+ .comment       0x0000000000000049       0x4a lib/syscall.o
