@@ -1,0 +1,146 @@
+
+Công cụ GNU Arm Embedded Toolchain 10.3-2021.10
+Công cụ biên dịch GNU đã được biên dịch sẵn cho các bộ vi xử lý Arm Cortex-A/R và Cortex-M
+Phiên bản GCC: 10.3
+
+Mục lục
+* Cài đặt các tệp thực thi trên Linux
+* Cài đặt các tệp thực thi trên Mac OS X
+* Cài đặt các tệp thực thi trên Windows
+* Gọi GCC
+* Cách sử dụng các tùy chọn kiến trúc
+* Các multilib có sẵn
+* Cách sử dụng thư viện C
+* Các tập tin liên kết & mã khởi động
+* Ví dụ
+* GDB Server cho phần cứng CMSIS-DAP
+
+* Cài đặt các tệp thực thi trên Linux *
+Giải nén tệp tarball vào thư mục cài đặt, như sau:
+
+    $ cd ${install_dir} && tar xjf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2
+    $ cd ${install_dir} && tar xjf gcc-arm-none-eabi-10.3-2021.10-aarch64-linux.tar.bz2
+
+Nếu bạn muốn sử dụng bản build gdb python (arm-none-eabi-gdb-py), thì
+cài đặt python2.7.
+
+* Cài đặt các tệp thực thi trên Mac OS X *
+Giải nén tệp tarball vào thư mục cài đặt, như sau:
+
+    $ cd ${install_dir} && tar xjf gcc-arm-none-eabi-10.3-2021.10-mac.tar.bz2
+
+* Cài đặt các tệp thực thi trên Windows *
+Chạy trình cài đặt (gcc-arm-none-eabi-10.3-2021.10-win32.exe) và làm theo hướng dẫn.
+Trình cài đặt cũng có thể được chạy từ dòng lệnh. Khi chạy từ dòng lệnh, các tùy chọn sau có thể được thiết lập:
+  - /S Chạy ở chế độ im lặng
+  - /P Thêm thư mục bin của cài đặt vào hệ thống PATH
+  - /R Thêm mục đăng ký InstallFolder cho cài đặt.
+
+Ví dụ, để cài đặt công cụ một cách im lặng, bổ sung PATH của người dùng và thêm mục đăng ký:
+
+    > gcc-arm-none-eabi-10.3-2021.10-win32.exe /S /P /R
+
+Bộ công cụ trong gói zip cho Windows là bản sao lưu cho trình cài đặt Windows cho
+những ai không thể chạy trình cài đặt. Bạn phải giải nén gói zip
+và sau đó gọi nó theo hướng dẫn trong phần tiếp theo.
+
+Để sử dụng bản build gdb python (arm-none-eabi-gdb-py), bạn phải cài đặt python2.7 32 bit bất kể là Windows 32 bit hay 64 bit. Hãy tải gói từ
+https://www.python.org/downloads/.
+
+* Gọi GCC *
+Trên Linux và Mac OS X, bạn có thể gọi trực tiếp với đường dẫn đầy đủ như sau:
+
+    $ ${install_dir}/gcc-arm-none-eabi-10.3-2021.10/bin/arm-none-eabi-gcc
+
+Hoặc thiết lập PATH như sau:
+
+    $ export PATH=$PATH:${install_dir}/gcc-arm-none-eabi-10.3-2021.10/bin
+    $ arm-none-eabi-gcc --version
+
+Trên Windows (mặc dù các phương pháp trên cũng hoạt động), có thể thuận tiện hơn nếu bạn để cho trình cài đặt đăng ký các biến môi trường hoặc chạy
+INSTALL_DIRin\gccvar.bat để thiết lập các biến môi trường cho cmd hiện tại.
+
+Đối với gói zip Windows, sau khi giải nén, chúng ta có thể gọi bộ công cụ với
+đường dẫn đầy đủ như sau:
+TOOLCHAIN_UNZIP_DIRinrm-none-eabi-gcc
+hoặc chạy TOOLCHAIN_UNZIP_DIRin\gccvar.bat để thiết lập các biến môi trường cho
+cmd hiện tại.
+
+* Cách sử dụng các tùy chọn kiến trúc *
+
+Bộ công cụ này được xây dựng và tối ưu hóa cho phát triển nhúng với Cortex-A/R/M.
+Phần này mô tả cách gọi GCC/G++ với các tùy chọn dòng lệnh chính xác cho các biến thể của kiến trúc Cortex-A/R và Cortex-M.
+
+    $ arm-none-eabi-gcc [-mthumb] -mcpu=CPU[+extension...] -mfloat-abi=ABI
+
+-mcpu:
+Để biết các tên CPU và phần mở rộng có thể có, xem tài liệu trực tuyến của GCC:
+https://gcc.gnu.org/onlinedocs/gcc-10.3.0/gcc/ARM-Options.html#index-mcpu-2
+Sử dụng tên phần mở rộng tùy chọn với -mcpu để tắt các phần mở rộng không có trong triển khai CPU của bạn.
+
+Mặc định, -mfpu=auto và điều này cho phép biên dịch viên tự động chọn
+các lệnh dấu chấm động và SIMD nâng cao dựa trên tùy chọn -mcpu và phần mở rộng.
+
+-mfloat-abi:
+Nếu có các lệnh dấu chấm động hoặc SIMD nâng cao, bạn có thể sử dụng
+tùy chọn -mfloat-abi để điều khiển ABI dấu chấm động, hoặc sử dụng -mfloat-abi=soft
+để tắt các lệnh dấu chấm động và SIMD nâng cao.
+Để biết các giá trị có thể có của -mfloat-abi, tham khảo tài liệu trực tuyến của GCC:
+https://gcc.gnu.org/onlinedocs/gcc-10.3.0/gcc/ARM-Options.html#index-mfloat-abi
+
+-mthumb:
+Khi sử dụng các bộ xử lý có thể thực thi ở cả chế độ Arm và Thumb, hãy sử dụng -mthumb
+để tạo mã cho chế độ Thumb.
+
+Ví dụ với không có dấu chấm động và các lệnh SIMD nâng cao:
+    $ arm-none-eabi-gcc -mcpu=cortex-m7+nofp
+    $ arm-none-eabi-gcc -mcpu=cortex-r5+nofp -mthumb
+    $ arm-none-eabi-gcc -mcpu=cortex-a53+nofp -mthumb
+    $ arm-none-eabi-gcc -mcpu=cortex-a57 -mfloat-abi=soft -mthumb
+
+Ví dụ với dấu chấm động đơn chính với ABI soft-float:
+    $ arm-none-eabi-gcc -mcpu=cortex-m7+nofp.dp -mfloat-abi=softfp
+    $ arm-none-eabi-gcc -mcpu=cortex-r5+nofp.dp -mfloat-abi=softfp -mthumb
+
+Ví dụ với dấu chấm động đơn chính với ABI hard-float:
+    $ arm-none-eabi-gcc -mcpu=cortex-m7+nofp.dp -mfloat-abi=hard
+    $ arm-none-eabi-gcc -mcpu=cortex-r5+nofp.dp -mfloat-abi=hard -mthumb
+
+Ví dụ với dấu chấm động kép chính với ABI soft-float:
+    $ arm-none-eabi-gcc -mcpu=cortex-m7 -mfloat-abi=softfp
+    $ arm-none-eabi-gcc -mcpu=cortex-r5 -mfloat-abi=softfp -mthumb
+
+Ví dụ với dấu chấm động kép chính với ABI hard-float:
+    $ arm-none-eabi-gcc -mcpu=cortex-m7 -mfloat-abi=hard
+    $ arm-none-eabi-gcc -mcpu=cortex-r5 -mfloat-abi=hard -mthumb
+
+Ví dụ với dấu chấm động và các lệnh SIMD nâng cao với ABI soft-float:
+    $ arm-none-eabi-gcc -mcpu=cortex-a53 -mfloat-abi=softfp -mthumb
+
+Ví dụ với dấu chấm động và các lệnh SIMD nâng cao với ABI hard-float:
+    $ arm-none-eabi-gcc -mcpu=cortex-a53 -mfloat-abi=hard -mthumb
+
+Ví dụ với MVE và dấu chấm động với ABI soft-float:
+    $ arm-none-eabi-gcc -mcpu=cortex-m55 -mfloat-abi=softfp
+
+Ví dụ với MVE và dấu chấm động với ABI hard-float:
+    $ arm-none-eabi-gcc -mcpu=cortex-m55 -mfloat-abi=hard
+
+* Các multilib có sẵn *
+
+Bộ công cụ GNU Arm Embedded Toolchain 10.3-2021.10 cung cấp cả hai bộ multilib rmprofile và
+aprofile.
+
+Cách liệt kê tất cả các multilib mà bộ công cụ hỗ trợ:
+
+    $ arm-none-eabi-gcc --print-multi-lib
+
+Cách kiểm tra multilib nào đã được chọn bởi bộ công cụ dựa trên -mthumb, -mcpu,
+-mfpu và -mfloat-abi với tùy chọn dòng lệnh --print-multi-dir:
+
+    $ arm-none-eabi-gcc [-mthumb] -mcpu=CPU -mfpu=FPU -mfloat-abi=ABI --print-multi-dir
+
+Ví dụ:
+
+    $ arm-none-eabi-gcc -mcpu=cortex-a55 -mfpu=auto -mfloat-abi=hard --print-multi-dir
+    thumb/v8-a+simd/hard
